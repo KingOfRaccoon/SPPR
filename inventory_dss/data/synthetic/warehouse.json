@@ -1,0 +1,9 @@
+{
+  "warehouse_id": "WH-CENTRAL-01",
+  "name": "Центральный распределительный склад",
+  "total_volume_capacity_m3": 1000.0,
+  "total_weight_capacity_kg": 50000.0,
+  "fixed_order_cost": 3500.0,
+  "annual_capital_rate": 0.18,
+  "target_service_level": 0.95
+}

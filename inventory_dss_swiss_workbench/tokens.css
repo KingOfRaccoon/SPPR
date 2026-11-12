@@ -1,0 +1,158 @@
+:root {
+  color-scheme: light;
+
+  /* Archetype B — Editorial Swiss Grid: Crisp Cool-Neutral Architectural Sheet & Graphite Ink */
+  --bg-canvas: oklch(0.985 0.002 245);
+  --surface-1: oklch(1.000 0.000 0);
+  --surface-2: oklch(0.956 0.003 245);
+  --surface-elevated: oklch(1.000 0.000 0);
+
+  /* Deep Archival Ink Typography */
+  --text-primary: oklch(0.165 0.008 245);
+  --text-secondary: oklch(0.355 0.010 245);
+  --text-muted: oklch(0.465 0.010 245);
+
+  /* Editorial Vermilion Accent (Used strictly on Primary Action & Key Delta) */
+  --accent-primary: oklch(0.485 0.175 30.0);
+  --accent-primary-hover: oklch(0.435 0.175 30.0);
+  --accent-fg: oklch(0.995 0.001 245);
+  --accent-subtle: oklch(0.935 0.022 30.0);
+
+  /* Crisp Swiss Grid Hairlines */
+  --border-subtle: oklch(0.855 0.006 245);
+  --border-strong: oklch(0.220 0.010 245);
+  --border-accent: oklch(0.485 0.022 30.0);
+
+  /* Semantic Status Tokens */
+  --status-success-bg: oklch(0.942 0.025 152);
+  --status-success-fg: oklch(0.320 0.085 152);
+  --status-warning-bg: oklch(0.945 0.032 76);
+  --status-warning-fg: oklch(0.360 0.095 76);
+  --status-danger-bg: oklch(0.942 0.032 28);
+  --status-danger-fg: oklch(0.360 0.120 28);
+
+  /* Crisp 2px Swiss Structural Geometry */
+  --radius-card: 2px;
+  --radius-control: 2px;
+  --padding-card-inner: 0px;
+
+  /* Swiss Grotesque Sans + Technical Mono */
+  --font-display: 'Geist', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --font-sans: 'Geist', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --font-mono: ui-monospace, Menlo, Monaco, Consolas, 'Liberation Mono', 'JetBrains Mono', monospace;
+}
+
+/* Structural Grid, Responsive Track & Control Overflow Hardening */
+.grid > * {
+  min-width: 0;
+}
+.py-3\.5 { padding-top: 14px; padding-bottom: 14px; }
+.pt-0\.5 { padding-top: 3px; }
+.px-0\.5 { padding-left: 2px; padding-right: 2px; }
+.max-h-64 { max-height: 256px; }
+.h-auto { height: auto; }
+.select-none { user-select: none; -webkit-user-select: none; }
+
+select {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 100%;
+  min-width: 0;
+  box-sizing: border-box;
+}
+select::picker-icon {
+  display: none;
+}
+button.field-compact,
+div.field-compact,
+span.field-compact {
+  height: auto;
+  padding: 4px 10px;
+  line-height: 1.3;
+  background-image: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 6px;
+  max-width: 100%;
+}
+
+@media (min-width: 641px) {
+  input.field-compact {
+    min-height: 30px;
+    height: 30px;
+    min-width: 0;
+    max-width: 100%;
+  }
+  select.field-compact {
+    min-height: 30px;
+    height: 30px;
+    line-height: 28px;
+    padding-left: 10px;
+    padding-right: 28px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 100%;
+  }
+  button.field-compact,
+  div.field-compact,
+  span.field-compact {
+    min-height: 30px;
+  }
+  button.btn-primary {
+    min-height: 30px;
+    height: auto;
+    padding-top: 4px;
+    padding-bottom: 4px;
+    max-width: 100%;
+  }
+  button.btn-secondary,
+  button.btn-ghost {
+    min-height: 28px;
+    height: auto;
+    padding-top: 3px;
+    padding-bottom: 3px;
+    max-width: 100%;
+  }
+}
+
+@media (min-width: 640px) {
+  label.sm\:inline, span.sm\:inline { display: inline; }
+  section.sm\:px-4, div.sm\:px-4 { padding-left: 16px; padding-right: 16px; }
+  .grid > .sm\:col-span-2 { grid-column: span 2 / span 2; }
+  .grid > .sm\:col-span-3 { grid-column: span 3 / span 3; }
+  .grid > .sm\:col-span-9 { grid-column: span 9 / span 9; }
+  .grid > .sm\:col-span-10 { grid-column: span 10 / span 10; }
+}
+
+@media (min-width: 641px) and (max-width: 1219px) {
+  div table.ledger-table thead th,
+  div table.ledger-table tbody td {
+    padding: 5px 4px;
+    font-size: 12px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .app-shell-rail .app-rail-telemetry {
+    position: sticky;
+    bottom: 12px;
+  }
+}
+
+@media (min-width: 1220px) {
+  .grid.xl\:grid-cols-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .grid.xl\:grid-cols-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .grid.xl\:grid-cols-4 { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+  .grid.xl\:grid-cols-12 { grid-template-columns: repeat(12, minmax(0, 1fr)); }
+  .grid > .xl\:col-span-3 { grid-column: span 3 / span 3; }
+  .grid > .xl\:col-span-4 { grid-column: span 4 / span 4; }
+  .grid > .xl\:col-span-5 { grid-column: span 5 / span 5; }
+  .grid > .xl\:col-span-6 { grid-column: span 6 / span 6; }
+  .grid > .xl\:col-span-7 { grid-column: span 7 / span 7; }
+  .grid > .xl\:col-span-8 { grid-column: span 8 / span 8; }
+  .grid > .xl\:col-span-9 { grid-column: span 9 / span 9; }
+  .grid > .xl\:col-span-12 { grid-column: span 12 / span 12; }
+}

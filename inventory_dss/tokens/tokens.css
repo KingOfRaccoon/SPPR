@@ -1,0 +1,497 @@
+/* ==========================================================================
+   INVENTORY DSS DESIGN SYSTEM :: CSS CUSTOM PROPERTIES SPECIFICATION
+   Industrial Neo-Brutalism Edition (v3.0.0)
+   Platform: Quantitative Decision Support System (СППР inventory_dss)
+   WCAG Compliance: Strict WCAG 2.2 AA (Text CR >= 4.5:1, UI Marks >= 3.0:1)
+   ========================================================================== */
+
+:root {
+  /* ------------------------------------------------------------------------
+     1. PRIMITIVES: SPATIAL GRID (4px / 8px Baseline)
+     ------------------------------------------------------------------------ */
+  --space-0: 0px;
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 20px;
+  --space-6: 24px;
+  --space-8: 32px;
+  --space-10: 40px;
+  --space-12: 48px;
+  --space-16: 64px;
+
+  /* ------------------------------------------------------------------------
+     2. PRIMITIVES: CONCENTRIC RADII
+     Formula: R_outer = R_inner + Padding
+     ------------------------------------------------------------------------ */
+  --radius-none: 0px;
+  --radius-xs: 2px;
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+  --radius-xl: 16px;
+  --radius-2xl: 24px;
+  --radius-full: 9999px;
+
+  /* ------------------------------------------------------------------------
+     3. PRIMITIVES: TYPOGRAPHY & TABULAR FIGURES
+     ------------------------------------------------------------------------ */
+  --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  --font-mono: 'JetBrains Mono', 'SF Mono', Consolas, 'Liberation Mono', Menlo, monospace;
+
+  /* OpenType Tabular Feature Settings */
+  --font-tabular: tabular-nums;
+  --font-tabular-features: "tnum" 1, "zero" 1;
+
+  /* Typography Scale */
+  --type-display-size: 2.25rem;
+  --type-display-leading: 1.15;
+  --type-display-weight: 700;
+  --type-display-tracking: -0.025em;
+
+  --type-h1-size: 1.875rem;
+  --type-h1-leading: 1.2;
+  --type-h1-weight: 700;
+  --type-h1-tracking: -0.02em;
+
+  --type-h2-size: 1.5rem;
+  --type-h2-leading: 1.25;
+  --type-h2-weight: 600;
+  --type-h2-tracking: -0.015em;
+
+  --type-h3-size: 1.25rem;
+  --type-h3-leading: 1.3;
+  --type-h3-weight: 600;
+  --type-h3-tracking: -0.01em;
+
+  --type-h4-size: 1.125rem;
+  --type-h4-leading: 1.35;
+  --type-h4-weight: 600;
+
+  --type-body-lg-size: 1.0rem;
+  --type-body-lg-leading: 1.5;
+  --type-body-lg-weight: 400;
+
+  --type-body-md-size: 0.875rem;
+  --type-body-md-leading: 1.45;
+  --type-body-md-weight: 400;
+
+  --type-body-sm-size: 0.75rem;
+  --type-body-sm-leading: 1.4;
+  --type-body-sm-weight: 500;
+
+  --type-caption-size: 0.6875rem;
+  --type-caption-leading: 1.35;
+  --type-caption-weight: 600;
+
+  --type-stat-lg-size: 1.75rem;
+  --type-stat-lg-leading: 1.1;
+  --type-stat-lg-weight: 700;
+
+  --type-stat-md-size: 1.25rem;
+  --type-stat-md-leading: 1.2;
+  --type-stat-md-weight: 600;
+
+  --type-stat-sm-size: 0.875rem;
+  --type-stat-sm-leading: 1.3;
+  --type-stat-sm-weight: 500;
+
+  /* ------------------------------------------------------------------------
+     4. PRIMITIVES: INDUSTRIAL HARD OFFSET SHADOWS (0-BLUR)
+     ------------------------------------------------------------------------ */
+  --elevation-none: none;
+  --elevation-xs: 1px 1px 0px #000000;
+  --elevation-sm: 3px 3px 0px #000000;
+  --elevation-md: 5px 5px 0px #000000;
+  --elevation-lg: 7px 7px 0px #000000;
+  --elevation-xl: 10px 10px 0px #000000;
+
+  /* ------------------------------------------------------------------------
+     5. PRIMITIVES: ANALYTICAL & DATAVIZ PALETTES
+     ------------------------------------------------------------------------ */
+  /* Categorical Sequence (OKLCH Delta H >= 35 deg) */
+  --chart-c1: #6366F1; /* Indigo */
+  --chart-c2: #10B981; /* Emerald */
+  --chart-c3: #F59E0B; /* Amber */
+  --chart-c4: #EF4444; /* Crimson */
+  --chart-c5: #0EA5E9; /* Sky */
+  --chart-c6: #8B5CF6; /* Purple */
+  --chart-c7: #14B8A6; /* Teal */
+  --chart-c8: #F43F5E; /* Rose */
+
+  /* Sequential Density (OKLCH Monotonic Blue-Cyan with Hazard Alert) */
+  --chart-seq-1: #E0E7FF;
+  --chart-seq-2: #C7D2FE;
+  --chart-seq-3: #A5B4FC;
+  --chart-seq-4: #818CF8;
+  --chart-seq-5: #6366F1;
+  --chart-seq-6: #4F46E5;
+  --chart-seq-7: #4338CA;
+  --chart-seq-8: #3730A3;
+  --chart-seq-hazard: #EF4444;
+
+  /* Diverging Variance (Crimson -> Neutral -> Emerald) */
+  --chart-div-neg-dark: #7F1D1D;
+  --chart-div-neg-base: #EF4444;
+  --chart-div-neg-light: #FCA5A5;
+  --chart-div-neu-dark: #27272A;
+  --chart-div-neu-light: #E2E8F0;
+  --chart-div-pos-light: #6EE7B7;
+  --chart-div-pos-base: #10B981;
+  --chart-div-pos-dark: #064E3B;
+
+  /* ------------------------------------------------------------------------
+     6. DEFAULT TO DARK THEME (Tactical Command & Operations)
+     ------------------------------------------------------------------------ */
+  --surface-layer-0: #09090B;
+  --surface-layer-1: #18181B;
+  --surface-layer-2: #27272A;
+  --surface-accent: rgba(79, 70, 229, 0.15);
+
+  --text-primary: #F4F4F5;
+  --text-secondary: #A1A1AA;
+  --text-muted: #71717A;
+  --text-inverse: #09090B;
+  --text-accent: #818CF8;
+
+  --border-subtle: #27272A;
+  --border-default: #3F3F46;
+  --border-strong: #71717A;
+  --border-focus: #818CF8;
+
+  --brand-primary: #4F46E5;
+  --brand-hover: #6366F1;
+  --brand-active: #4338CA;
+
+  --status-critical-fg: #F87171;
+  --status-critical-bg: #450A0A;
+  --status-critical-border: #991B1B;
+  --status-critical-solid: #EF4444;
+  --status-critical-pulse: rgba(239, 68, 68, 0.4);
+
+  --status-reorder-fg: #FBBF24;
+  --status-reorder-bg: #451A03;
+  --status-reorder-border: #92400E;
+  --status-reorder-solid: #F59E0B;
+  --status-reorder-pulse: rgba(245, 158, 11, 0.4);
+
+  --status-optimal-fg: #34D399;
+  --status-optimal-bg: #022C22;
+  --status-optimal-border: #064E3B;
+  --status-optimal-solid: #10B981;
+  --status-optimal-pulse: rgba(16, 185, 129, 0.4);
+
+  --status-excess-fg: #38BDF8;
+  --status-excess-bg: #082F49;
+  --status-excess-border: #075985;
+  --status-excess-solid: #0EA5E9;
+  --status-excess-pulse: rgba(14, 165, 233, 0.4);
+
+  /* Epistemic Trust Tiers (XAI) */
+  --trust-algorithmic-badge-bg: #022C22;
+  --trust-algorithmic-badge-fg: #34D399;
+  --trust-algorithmic-badge-border: #064E3B;
+  --trust-algorithmic-accent-bar: #10B981;
+
+  --trust-heuristic-badge-bg: #1E1B4B;
+  --trust-heuristic-badge-fg: #A5B4FC;
+  --trust-heuristic-badge-border: #3730A3;
+  --trust-heuristic-accent-bar: #6366F1;
+
+  --trust-exploratory-badge-bg: #451A03;
+  --trust-exploratory-badge-fg: #FDE68A;
+  --trust-exploratory-badge-border: #92400E;
+  --trust-exploratory-accent-bar: #F59E0B;
+
+  /* Depth Layer Shadows */
+  --elevation-0: none;
+  --elevation-1: 0 1px 3px 0 rgba(0, 0, 0, 0.4), 0 1px 2px -1px rgba(0, 0, 0, 0.3);
+  --elevation-2: 0 4px 6px -1px rgba(0, 0, 0, 0.4), 0 2px 4px -2px rgba(0, 0, 0, 0.3);
+  --elevation-3: 0 10px 15px -3px rgba(0, 0, 0, 0.4), 0 4px 6px -4px rgba(0, 0, 0, 0.3);
+  --elevation-4: 0 20px 25px -5px rgba(0, 0, 0, 0.5), 0 8px 10px -6px rgba(0, 0, 0, 0.4);
+
+  /* Status Glows */
+  --glow-critical: 0 0 0 1px rgba(239, 68, 68, 0.4), 0 0 12px rgba(239, 68, 68, 0.25);
+  --glow-optimal: 0 0 0 1px rgba(16, 185, 129, 0.4), 0 0 12px rgba(16, 185, 129, 0.25);
+  --glow-brand: 0 0 0 1px rgba(79, 70, 229, 0.4), 0 0 12px rgba(79, 70, 229, 0.25);
+
+  /* 9-Cell ABC/XYZ Quadrants (Dark Mode) */
+  --matrix-ax-bg: #1E1B4B; --matrix-ax-fg: #C7D2FE; --matrix-ax-border: #4338CA;
+  --matrix-ay-bg: #2E1065; --matrix-ay-fg: #E9D5FF; --matrix-ay-border: #7E22CE;
+  --matrix-az-bg: #4C0519; --matrix-az-fg: #FECDD3; --matrix-az-border: #BE123C;
+  --matrix-bx-bg: #082F49; --matrix-bx-fg: #BAE6FD; --matrix-bx-border: #0369A1;
+  --matrix-by-bg: #134E4A; --matrix-by-fg: #99F6E4; --matrix-by-border: #0F766E;
+  --matrix-bz-bg: #451A03; --matrix-bz-fg: #FDE68A; --matrix-bz-border: #B45309;
+  --matrix-cx-bg: #022C22; --matrix-cx-fg: #A7F3D0; --matrix-cx-border: #047857;
+  --matrix-cy-bg: #1E293B; --matrix-cy-fg: #CBD5E1; --matrix-cy-border: #475569;
+  --matrix-cz-bg: #1C1917; --matrix-cz-fg: #D6D3D1; --matrix-cz-border: #78716C;
+}
+
+/* ==========================================================================
+   THEME SELECTORS: EXPLICIT DARK & LIGHT
+   ========================================================================== */
+
+[data-theme="dark"] {
+  --surface-layer-0: #09090B;
+  --surface-layer-1: #18181B;
+  --surface-layer-2: #27272A;
+  --surface-accent: rgba(79, 70, 229, 0.15);
+
+  --text-primary: #F4F4F5;
+  --text-secondary: #A1A1AA;
+  --text-muted: #71717A;
+  --text-inverse: #09090B;
+  --text-accent: #818CF8;
+
+  --border-subtle: #27272A;
+  --border-default: #3F3F46;
+  --border-strong: #71717A;
+  --border-focus: #818CF8;
+
+  --brand-primary: #4F46E5;
+  --brand-hover: #6366F1;
+  --brand-active: #4338CA;
+
+  --status-critical-fg: #F87171;
+  --status-critical-bg: #450A0A;
+  --status-critical-border: #991B1B;
+  --status-critical-solid: #EF4444;
+  --status-critical-pulse: rgba(239, 68, 68, 0.4);
+
+  --status-reorder-fg: #FBBF24;
+  --status-reorder-bg: #451A03;
+  --status-reorder-border: #92400E;
+  --status-reorder-solid: #F59E0B;
+  --status-reorder-pulse: rgba(245, 158, 11, 0.4);
+
+  --status-optimal-fg: #34D399;
+  --status-optimal-bg: #022C22;
+  --status-optimal-border: #064E3B;
+  --status-optimal-solid: #10B981;
+  --status-optimal-pulse: rgba(16, 185, 129, 0.4);
+
+  --status-excess-fg: #38BDF8;
+  --status-excess-bg: #082F49;
+  --status-excess-border: #075985;
+  --status-excess-solid: #0EA5E9;
+  --status-excess-pulse: rgba(14, 165, 233, 0.4);
+
+  --trust-algorithmic-badge-bg: #022C22;
+  --trust-algorithmic-badge-fg: #34D399;
+  --trust-algorithmic-badge-border: #064E3B;
+  --trust-algorithmic-accent-bar: #10B981;
+
+  --trust-heuristic-badge-bg: #1E1B4B;
+  --trust-heuristic-badge-fg: #A5B4FC;
+  --trust-heuristic-badge-border: #3730A3;
+  --trust-heuristic-accent-bar: #6366F1;
+
+  --trust-exploratory-badge-bg: #451A03;
+  --trust-exploratory-badge-fg: #FDE68A;
+  --trust-exploratory-badge-border: #92400E;
+  --trust-exploratory-accent-bar: #F59E0B;
+
+  --elevation-0: none;
+  --elevation-1: 0 1px 3px 0 rgba(0, 0, 0, 0.4), 0 1px 2px -1px rgba(0, 0, 0, 0.3);
+  --elevation-2: 0 4px 6px -1px rgba(0, 0, 0, 0.4), 0 2px 4px -2px rgba(0, 0, 0, 0.3);
+  --elevation-3: 0 10px 15px -3px rgba(0, 0, 0, 0.4), 0 4px 6px -4px rgba(0, 0, 0, 0.3);
+  --elevation-4: 0 20px 25px -5px rgba(0, 0, 0, 0.5), 0 8px 10px -6px rgba(0, 0, 0, 0.4);
+
+  --glow-critical: 0 0 0 1px rgba(239, 68, 68, 0.4), 0 0 12px rgba(239, 68, 68, 0.25);
+  --glow-optimal: 0 0 0 1px rgba(16, 185, 129, 0.4), 0 0 12px rgba(16, 185, 129, 0.25);
+  --glow-brand: 0 0 0 1px rgba(79, 70, 229, 0.4), 0 0 12px rgba(79, 70, 229, 0.25);
+
+  --matrix-ax-bg: #1E1B4B; --matrix-ax-fg: #C7D2FE; --matrix-ax-border: #4338CA;
+  --matrix-ay-bg: #2E1065; --matrix-ay-fg: #E9D5FF; --matrix-ay-border: #7E22CE;
+  --matrix-az-bg: #4C0519; --matrix-az-fg: #FECDD3; --matrix-az-border: #BE123C;
+  --matrix-bx-bg: #082F49; --matrix-bx-fg: #BAE6FD; --matrix-bx-border: #0369A1;
+  --matrix-by-bg: #134E4A; --matrix-by-fg: #99F6E4; --matrix-by-border: #0F766E;
+  --matrix-bz-bg: #451A03; --matrix-bz-fg: #FDE68A; --matrix-bz-border: #B45309;
+  --matrix-cx-bg: #022C22; --matrix-cx-fg: #A7F3D0; --matrix-cx-border: #047857;
+  --matrix-cy-bg: #1E293B; --matrix-cy-fg: #CBD5E1; --matrix-cy-border: #475569;
+  --matrix-cz-bg: #1C1917; --matrix-cz-fg: #D6D3D1; --matrix-cz-border: #78716C;
+}
+
+[data-theme="light"] {
+  --surface-layer-0: #F8FAFC;
+  --surface-layer-1: #FFFFFF;
+  --surface-layer-2: #F1F5F9;
+  --surface-accent: rgba(79, 70, 229, 0.08);
+
+  --text-primary: #0F172A;
+  --text-secondary: #475569;
+  --text-muted: #64748B;
+  --text-inverse: #FFFFFF;
+  --text-accent: #4F46E5;
+
+  --border-subtle: #E2E8F0;
+  --border-default: #CBD5E1;
+  --border-strong: #64748B;
+  --border-focus: #4F46E5;
+
+  --brand-primary: #4F46E5;
+  --brand-hover: #4338CA;
+  --brand-active: #3730A3;
+
+  --status-critical-fg: #B91C1C;
+  --status-critical-bg: #FEF2F2;
+  --status-critical-border: #FECACA;
+  --status-critical-solid: #DC2626;
+  --status-critical-pulse: rgba(220, 38, 38, 0.3);
+
+  --status-reorder-fg: #92400E;
+  --status-reorder-bg: #FFFBEB;
+  --status-reorder-border: #FDE68A;
+  --status-reorder-solid: #D97706;
+  --status-reorder-pulse: rgba(217, 119, 6, 0.3);
+
+  --status-optimal-fg: #065F46;
+  --status-optimal-bg: #ECFDF5;
+  --status-optimal-border: #A7F3D0;
+  --status-optimal-solid: #059669;
+  --status-optimal-pulse: rgba(5, 150, 105, 0.3);
+
+  --status-excess-fg: #075985;
+  --status-excess-bg: #F0F9FF;
+  --status-excess-border: #BAE6FD;
+  --status-excess-solid: #0284C7;
+  --status-excess-pulse: rgba(2, 132, 199, 0.3);
+
+  --trust-algorithmic-badge-bg: #ECFDF5;
+  --trust-algorithmic-badge-fg: #065F46;
+  --trust-algorithmic-badge-border: #A7F3D0;
+  --trust-algorithmic-accent-bar: #059669;
+
+  --trust-heuristic-badge-bg: #EEF2FF;
+  --trust-heuristic-badge-fg: #3730A3;
+  --trust-heuristic-badge-border: #C7D2FE;
+  --trust-heuristic-accent-bar: #4F46E5;
+
+  --trust-exploratory-badge-bg: #FFFBEB;
+  --trust-exploratory-badge-fg: #78350F;
+  --trust-exploratory-badge-border: #FDE68A;
+  --trust-exploratory-accent-bar: #D97706;
+
+  --elevation-0: none;
+  --elevation-1: 0 1px 3px 0 rgba(15, 23, 42, 0.08), 0 1px 2px -1px rgba(15, 23, 42, 0.06);
+  --elevation-2: 0 4px 6px -1px rgba(15, 23, 42, 0.08), 0 2px 4px -2px rgba(15, 23, 42, 0.06);
+  --elevation-3: 0 10px 15px -3px rgba(15, 23, 42, 0.08), 0 4px 6px -4px rgba(15, 23, 42, 0.06);
+  --elevation-4: 0 20px 25px -5px rgba(15, 23, 42, 0.12), 0 8px 10px -6px rgba(15, 23, 42, 0.08);
+
+  --glow-critical: 0 0 0 1px rgba(220, 38, 38, 0.3), 0 0 12px rgba(220, 38, 38, 0.15);
+  --glow-optimal: 0 0 0 1px rgba(5, 150, 105, 0.3), 0 0 12px rgba(5, 150, 105, 0.15);
+  --glow-brand: 0 0 0 1px rgba(79, 70, 229, 0.3), 0 0 12px rgba(79, 70, 229, 0.15);
+
+  --matrix-ax-bg: #EEF2FF; --matrix-ax-fg: #312E81; --matrix-ax-border: #6366F1;
+  --matrix-ay-bg: #F3E8FF; --matrix-ay-fg: #581C87; --matrix-ay-border: #A855F7;
+  --matrix-az-bg: #FFF1F2; --matrix-az-fg: #9F1239; --matrix-az-border: #F43F5E;
+  --matrix-bx-bg: #F0F9FF; --matrix-bx-fg: #0C4A6E; --matrix-bx-border: #0284C7;
+  --matrix-by-bg: #F0FDFA; --matrix-by-fg: #134E4A; --matrix-by-border: #14B8A6;
+  --matrix-bz-bg: #FFFBEB; --matrix-bz-fg: #78350F; --matrix-bz-border: #D97706;
+  --matrix-cx-bg: #ECFDF5; --matrix-cx-fg: #064E3B; --matrix-cx-border: #10B981;
+  --matrix-cy-bg: #F1F5F9; --matrix-cy-fg: #334155; --matrix-cy-border: #94A3B8;
+  --matrix-cz-bg: #FAFAF9; --matrix-cz-fg: #44403C; --matrix-cz-border: #A8A29E;
+}
+
+/* ==========================================================================
+   GLOBAL KEYFRAMES & MICRO-INTERACTIONS
+   ========================================================================== */
+
+@keyframes dss-pulse {
+  0% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 var(--status-critical-pulse);
+  }
+  70% {
+    transform: scale(1.15);
+    box-shadow: 0 0 0 6px rgba(0, 0, 0, 0);
+  }
+  100% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
+  }
+}
+
+@keyframes dss-shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+@keyframes dss-spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes dss-shake {
+  0%, 100% { transform: translateX(0); }
+  20%, 60% { transform: translateX(-4px); }
+  40%, 80% { transform: translateX(4px); }
+}
+
+/* ==========================================================================
+   CORE COMPONENT UTILITY RULES & MECHANICAL AFFORDANCES
+   ========================================================================== */
+
+/* Mandatory Tabular Figures for All Numerics */
+.dss-tabular-nums,
+.stMetric [data-testid="stMetricValue"],
+.stDataFrame td,
+table td.numeric,
+.dss-stat-num {
+  font-family: var(--font-mono) !important;
+  font-variant-numeric: tabular-nums lining-nums !important;
+  font-feature-settings: "tnum" 1, "zero" 1 !important;
+}
+
+/* Accessible Focus Ring (WCAG 2.4.7 & 2.4.11) */
+.dss-focus-visible:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+[tabindex="0"]:focus-visible {
+  outline: 2px solid var(--border-focus) !important;
+  outline-offset: 2px !important;
+}
+
+/* Tactile Mechanical Action Buttons */
+.dss-btn-mechanical {
+  background-color: var(--brand-primary);
+  color: #FFFFFF;
+  border: 2px solid #000000;
+  box-shadow: var(--elevation-sm);
+  border-radius: var(--radius-sm);
+  font-family: var(--font-sans);
+  font-weight: 600;
+  transition: transform 0.12s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.12s ease, background-color 0.15s ease;
+}
+
+.dss-btn-mechanical:hover {
+  transform: translate(-1px, -1px);
+  box-shadow: var(--elevation-md);
+  background-color: var(--brand-hover);
+}
+
+.dss-btn-mechanical:active {
+  transform: translate(2px, 2px);
+  box-shadow: var(--elevation-xs);
+  background-color: var(--brand-active);
+}
+
+.dss-btn-mechanical:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+  pointer-events: none;
+  transform: none;
+  box-shadow: none;
+  background-color: var(--surface-layer-2);
+  color: var(--text-muted);
+}

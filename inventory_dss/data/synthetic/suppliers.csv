@@ -1,0 +1,6 @@
+supplier_id,name,mean_lead_time_days,std_lead_time_days,on_time_delivery_rate,defect_rate,min_order_quantity,price_markup_factor,order_processing_cost,profile_type
+SUP-PREMIUM,ТехноСнаб Премиум,4.0,0.5,0.985,0.003,10,1.1,4000.0,PREMIUM_RELIABLE
+SUP-BUDGET,ГлобалТрейд Дискаунт,14.0,4.0,0.75,0.035,50,0.85,3000.0,BUDGET_VOLATILE
+SUP-LOCAL,Северо-Запад Экспресс,2.0,0.3,0.96,0.008,1,1.05,2500.0,LOCAL_EXPRESS
+SUP-OVERSEAS,Восток Импорт Опт,35.0,6.0,0.82,0.02,200,0.75,8000.0,OVERSEAS_BULK
+SUP-STANDARD,Альянс Логистик,7.0,1.2,0.91,0.012,25,1.0,3500.0,BALANCED_STANDARD
